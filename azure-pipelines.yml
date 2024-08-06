@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+  
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'ASoCServiceConnection06.08.2024'
+    applications: 'bc39ab99-5c56-4548-b3ed-4f11efc1cba0'
+    scanname: 'TestAzure'
+    scantype: 'static'
+    scanMethod: 'IRX'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
