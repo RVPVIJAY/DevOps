@@ -16,8 +16,8 @@ steps:
 - task: HCLAppScanOnCloud@2
   inputs:
     AppSecTestService: 'ASoCServiceConnection06.08.2024'
-    applications: 'bc39ab99-5c56-4548-b3ed-4f11efc1cba0'
-    scanname: 'TestAzure'
+    applications: '59df64e8-be0b-4af4-ad9f-2f5176fdfdca'
+    scanname: 'testtttt'
     scantype: 'static'
     scanMethod: 'IRX'
 
